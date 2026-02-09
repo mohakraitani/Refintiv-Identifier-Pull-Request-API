@@ -1,0 +1,48 @@
+import time
+import pandas as pd
+import eikon as ek
+
+ek.set_app_key("4ce34b2bf738491b8dbde00b68e9d3e16e5feccf")
+
+df = pd.read_excel(
+    r"C:\Users\uqmraita\Documents\Asset Level\data\RIC(Global).xlsx"
+)
+
+rics = df["RIC"].dropna().astype(str).unique().tolist()
+
+print(f"Total unique RICs: {len(rics)}")
+
+output_file = "ric_oapermid_mapping.csv"
+
+def chunk_list(lst, size=1000):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
+
+first_write = True
+
+for i, chunk in enumerate(chunk_list(rics, 1000), start=1):
+    try:
+        print(f"Processing chunk {i} ({len(chunk)} RICs)")
+
+        permid_chunk = ek.get_symbology(
+            chunk,
+            from_symbol_type="RIC",
+            to_symbol_type="OAPermID",
+            best_match=False
+        )
+
+        permid_chunk.to_csv(
+            output_file,
+            mode="w" if first_write else "a",
+            header=first_write,
+            index=False
+        )
+
+        first_write = False
+        print(f"Chunk {i} saved successfully")
+
+        time.sleep(1)  # rate-limit protection
+
+    except Exception as e:
+        print(f"Chunk {i} failed: {e}")
+        time.sleep(5)
