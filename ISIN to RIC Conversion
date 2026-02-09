@@ -1,0 +1,80 @@
+
+"""Convert ISIN to RIC(Refinitv Instrument Code)
+Step 1 - Clean ISIN file to ensure that you have twelve digit ISINs 
+Step 2 - Set Up API Key (use API Key Generator from Refintiv 
+
+###############  Cleaning ISINs    ##############
+import re
+
+df = pd.read_excel("isins.xlsx")
+
+df.columns = df.columns.str.strip()
+
+df["ISIN"] = (
+    df["ISIN"]
+    .astype(str)
+    .str.upper()
+    .str.strip()
+
+    .str.replace(r"[^\w]", "", regex=True)   # removes commas, spaces, quotes
+)
+
+# Keep only valid ISINs (12 characters)
+df = df[df["ISIN"].str.len() == 12]
+
+isins = df["ISIN"].unique().tolist()
+
+print("Clean ISIN count:", len(isins))
+print("Sample ISINs:", isins[:10])
+
+
+
+#########   API CALL  ###########
+
+import time
+import pandas as pd
+import eikon as ek
+
+# SET API KEY
+ek.set_app_key("USE YOUR API KEY")
+
+# READ ISINs 
+df = pd.read_excel("isins.xlsx")
+isins = df["ISIN"].dropna().astype(str).unique().tolist()
+
+# OUTPUT FILE
+output_file = "isin_ric_mapping.csv"
+
+# CHUNK FUNCTION
+def chunk_list(lst, size=1000):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
+
+# PROCESS & SAVE
+first_write = True
+
+for i, chunk in enumerate(chunk_list(isins, 1000), start=1):
+    try:
+        print(f"Processing chunk {i} ({len(chunk)} ISINs)")
+
+        ric_chunk = ek.get_symbology(
+            chunk,
+            from_symbol_type="ISIN",
+            to_symbol_type="RIC",
+            best_match=False
+        )
+
+        ric_chunk.to_csv(
+            output_file,
+            mode="w" if first_write else "a",
+            header=first_write,
+            index=False
+        )
+
+        first_write = False
+        print(f"Chunk {i} saved")
+        time.sleep(1)
+
+    except Exception as e:
+        print(f"Chunk {i} failed: {e}")
+        time.sleep(5)
