@@ -27,9 +27,9 @@ The script supports conversion between the following identifier formats:
 ['RIC', 'ISIN', 'CUSIP', 'SEDOL', 'ticker', 'lipperID', 'IMO', 'OAPermID']
 
 
-All values passed to the to_symbol parameter must belong to the list above.
+*All values passed to the to_symbol parameter must belong to the list above.
 
-All values passed to the from_symbol_type parameter must also belong to the same list.
+*All values passed to the from_symbol_type parameter must also belong to the same list.
 
 🧩 Prerequisites
 
