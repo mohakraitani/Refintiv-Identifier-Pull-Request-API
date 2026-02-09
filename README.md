@@ -4,6 +4,11 @@
 
 * This script is designed to link external datasets with Refinitiv/LSEG data by converting and matching securities using common financial identifiers.
 
+# Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
+git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
+cd Refinitiv-Identifier-Conversion-API
+pip install pandas requests
+
 
 🔑 API Key Requirement
 
