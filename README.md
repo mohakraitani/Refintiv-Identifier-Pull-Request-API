@@ -11,7 +11,7 @@ pip install pandas requests
 
 
 🛠 Installation
-# Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
+Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
 git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
 cd Refinitiv-Identifier-Conversion-API
 pip install 
