@@ -1,4 +1,4 @@
-# Refintiv-Identifier-Pull-Request-API
+# Refinitiv Identifier Conversion API
 
 📌 Overview
 
