@@ -7,8 +7,8 @@
 ## Table of Contents
 
 - [Installation](#-installation)
-- [API Key Requirement](#-apikey)
-- [Supported Identifier Types](#-identifier-type)
+- [API Key Requirement](#-api-key-requirement)
+- [Supported Identifier Types](#-supported-identifier-types)
 - [Prerequisites](#-prerequisites)
 - [License](#-license)
 - [Usage Notes](#-usage-notes)
