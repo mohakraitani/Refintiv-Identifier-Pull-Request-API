@@ -1,23 +1,29 @@
 # Refinitiv Identifier Conversion API
 
-📌 Description
+## Description
 
 * This script is designed to link external datasets with Refinitiv/LSEG data by converting and matching securities using common financial identifiers.
 
-Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
-git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
-cd Refinitiv-Identifier-Conversion-API
-pip install pandas requests
+## Table of Contents
+
+- [Installation](#-installation)
+- [API Key Requirement](#-apikey)
+- [Supported Identifier Types](#-identifier-type)
+- [Prerequisites](#-prerequisites)
+- [License](#-license)
+- [Contact Information](#-contact-information)
+- [Disclaimer](#-disclaimer)
+- [Changelog](#changelog)
 
 
-🛠 Installation
+## 🛠 Installation
 Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
 git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
 cd Refinitiv-Identifier-Conversion-API
 pip install 
 
 
-🔑 API Key Requirement
+##🔑 API Key Requirement
 
 Before running the script, you must generate an API key from Refinitiv / LSEG.
 
@@ -34,7 +40,7 @@ Steps to generate an API key:
 * Copy and securely store the generated API key.
   
 
-🔄 Supported Identifier Types
+##🔄 Supported Identifier Types
 
 The script supports conversion between the following identifier formats:
 
@@ -46,7 +52,7 @@ The script supports conversion between the following identifier formats:
 * All values passed to the from_symbol_type parameter must also belong to the same list.
   
 
-🧩 Prerequisites
+##🧩 Prerequisites
 
 * Valid Refinitiv/LSEG account with API access
 
@@ -61,7 +67,7 @@ The script supports conversion between the following identifier formats:
 * Required Python libraries installed (if applicable)
 
 
-▶️ Usage Notes
+##▶️ Usage Notes
 
 * Ensure that the identifiers provided are valid and correctly formatted.
 
@@ -70,7 +76,7 @@ The script supports conversion between the following identifier formats:
 * Missing or unsupported identifiers may return empty or null results.
 
 
-🛑 Limitations
+## 🛑 Limitations
 
 * API rate limits apply as per Refinitiv/LSEG policy.
 
