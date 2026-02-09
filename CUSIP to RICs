@@ -1,0 +1,77 @@
+"""Converting CUSIPS to RICs"""
+import re
+import pandas as pd
+
+# Read file
+df = pd.read_excel("cusip.xlsx")
+
+# Clean column names
+df.columns = df.columns.str.strip()
+
+# Clean CUSIP column
+df["CUSIP"] = (
+    df["CUSIP"]
+    .astype(str)
+    .str.upper()
+    .str.strip()
+    .str.replace(r"[^\w]", "", regex=True)  # remove commas, spaces, quotes, symbols
+)
+
+# Keep only valid CUSIPs (9 characters)
+df = df[df["CUSIP"].str.len() == 9]
+
+# Get unique CUSIPs
+cusips = df["CUSIP"].unique().tolist()
+
+# Output
+print("Clean CUSIP count:", len(cusips))
+print("Sample CUSIPs:", cusips[:10])
+
+
+import time
+import pandas as pd
+import eikon as ek
+
+# SET API KEY
+ek.set_app_key("4ce34b2bf738491b8dbde00b68e9d3e16e5feccf")
+
+# READ CUSIPs (already cleaned, 9 characters)
+df = pd.read_excel("cusip.xlsx")
+cusips = df["CUSIP"].dropna().astype(str).unique().tolist()
+
+# OUTPUT FILE
+output_file = "cusip_ric_mapping.csv"
+
+# CHUNK FUNCTION
+def chunk_list(lst, size=1000):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
+
+# PROCESS & SAVE
+first_write = True
+
+for i, chunk in enumerate(chunk_list(cusips, 1000), start=1):
+    try:
+        print(f"Processing chunk {i} ({len(chunk)} CUSIPs)")
+
+        ric_chunk = ek.get_symbology(
+            chunk,
+            from_symbol_type="CUSIP",
+            to_symbol_type="RIC",
+            best_match=False
+        )
+
+        ric_chunk.to_csv(
+            output_file,
+            mode="w" if first_write else "a",
+            header=first_write,
+            index=False
+        )
+
+        first_write = False
+        print(f"Chunk {i} saved")
+        time.sleep(1)
+
+    except Exception as e:
+        print(f"Chunk {i} failed: {e}")
+        time.sleep(5)
