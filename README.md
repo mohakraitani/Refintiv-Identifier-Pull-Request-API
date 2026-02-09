@@ -12,7 +12,7 @@
 - [Prerequisites](#-prerequisites)
 - [License](#-license)
 - [Usage](#-usage)
-- [Limitations](#limitations)
+- [Limitations](#-limitations)
 - [Disclaimer](#-disclaimer)
 
 
