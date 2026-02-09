@@ -1,13 +1,20 @@
 # Refinitiv Identifier Conversion API
 
-📌 Overview
+📌 Description
 
 * This script is designed to link external datasets with Refinitiv/LSEG data by converting and matching securities using common financial identifiers.
 
-# Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
+Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
 git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
 cd Refinitiv-Identifier-Conversion-API
 pip install pandas requests
+
+
+🛠 Installation
+# Example for setting up the environment (we strongly recommend creating a dedicated virtual environment)
+git clone https://github.com/mohakraitani/Refinitiv-Identifier-Conversion-API.git
+cd Refinitiv-Identifier-Conversion-API
+pip install 
 
 
 🔑 API Key Requirement
@@ -68,3 +75,11 @@ The script supports conversion between the following identifier formats:
 * API rate limits apply as per Refinitiv/LSEG policy.
 
 * Identifier coverage depends on Refinitiv’s database availability.
+
+ ## ▶️ Disclaimer
+
+- This repository is an independent, personal open-source project and is **not affiliated with, endorsed by, or officially supported by Refinitiv, LSEG, or the author’s institution**.
+- The code is provided for general use only and comes **without any warranty or guarantees**.
+- Users are responsible for ensuring compliance with applicable **Refinitiv/LSEG data usage and licensing terms**.
+
+
