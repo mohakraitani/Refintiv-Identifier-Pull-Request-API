@@ -1,4 +1,9 @@
 """Converting CUSIPS to RICs"""
+
+Step 1 - First set of commands clean CUSIP file to ensure that you have nine digit CUSIP
+Step 2 - Set Up API Key (use API Key Generator from Refintiv)
+Step 3 - Please change your input file and output file as per your system."""
+
 import re
 import pandas as pd
 
