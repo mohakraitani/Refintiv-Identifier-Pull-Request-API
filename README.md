@@ -3,6 +3,7 @@
 📌 Overview
 
 * This script is designed to link external datasets with Refinitiv/LSEG data by converting and matching securities using common financial identifiers.
+  
 
 🔑 API Key Requirement
 
@@ -18,7 +19,8 @@ Steps to generate an API key:
 
 * Create a new API key and assign it a name of your choice.
 
-Copy and securely store the generated API key.
+* Copy and securely store the generated API key.
+  
 
 🔄 Supported Identifier Types
 
@@ -30,6 +32,7 @@ The script supports conversion between the following identifier formats:
 * All values passed to the to_symbol parameter must belong to the list above.
 
 * All values passed to the from_symbol_type parameter must also belong to the same list.
+  
 
 🧩 Prerequisites
 
@@ -45,6 +48,7 @@ The script supports conversion between the following identifier formats:
 
 * Required Python libraries installed (if applicable)
 
+
 ▶️ Usage Notes
 
 * Ensure that the identifiers provided are valid and correctly formatted.
@@ -52,6 +56,7 @@ The script supports conversion between the following identifier formats:
 * The script performs identifier conversion only; it does not validate firm fundamentals or market data.
 
 * Missing or unsupported identifiers may return empty or null results.
+
 
 🛑 Limitations
 
