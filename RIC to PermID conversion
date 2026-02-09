@@ -1,8 +1,10 @@
+"""Please change your input file and output file as per your system. 
+
 import time
 import pandas as pd
 import eikon as ek
 
-ek.set_app_key("4ce34b2bf738491b8dbde00b68e9d3e16e5feccf")
+ek.set_app_key("USE YOUR API KEY")
 
 df = pd.read_excel(
     r"C:\Users\uqmraita\Documents\Asset Level\data\RIC(Global).xlsx"
