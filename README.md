@@ -3,7 +3,7 @@
 📌 Overview
 
 * This script is designed to link external datasets with Refinitiv/LSEG data by converting and matching securities using common financial identifiers.
-  
+
 
 🔑 API Key Requirement
 
