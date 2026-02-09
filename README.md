@@ -11,7 +11,7 @@
 - [Supported Identifier Types](#-supported-identifier-types)
 - [Prerequisites](#-prerequisites)
 - [License](#-license)
-- [Usage Notes](#-usage-notes)
+- [Usage](#-usage)
 - [Limitations](#limitations)
 - [Disclaimer](#-disclaimer)
 
@@ -68,7 +68,7 @@ The script supports conversion between the following identifier formats:
 * Required Python libraries installed (if applicable)
 
 
-## ▶️ Usage Notes
+## ▶️ Usage
 
 * Ensure that the identifiers provided are valid and correctly formatted.
 
