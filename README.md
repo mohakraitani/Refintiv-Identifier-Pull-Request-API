@@ -10,13 +10,13 @@ Before running the script, you must generate an API key from Refinitiv / LSEG.
 
 Steps to generate an API key:
 
-Open the Refinitiv Workspace.
+           1. Open the Refinitiv Workspace.
 
-In the search bar, type APPKEY (App Key Generator).
+           2. In the search bar, type APPKEY (App Key Generator).
 
-Select EDP API.
+           3. Select EDP API.
 
-Create a new API key and assign it a name of your choice.
+           4. Create a new API key and assign it a name of your choice.
 
 Copy and securely store the generated API key.
 
