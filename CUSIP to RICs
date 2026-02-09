@@ -1,4 +1,4 @@
-"""Converting CUSIPS to RICs"""
+"""Converting CUSIPS to RICs
 
 Step 1 - First set of commands clean CUSIP file to ensure that you have nine digit CUSIP
 Step 2 - Set Up API Key (use API Key Generator from Refintiv)
