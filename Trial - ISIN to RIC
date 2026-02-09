@@ -1,0 +1,19 @@
+# LOAD EIKON
+import eikon as ek
+
+# SET YOUR EIKON API KEY
+# (Generate this from Refinitiv Workspace → App Key Generator)
+ek.set_app_key("USE your API Key here")
+
+# EXAMPLE ISIN
+ISIN = "DE0005140008"
+
+# CONVERT ISIN TO RIC (disable best match)
+ric_mapping = ek.get_symbology(
+    ISIN,
+    from_symbol_type="ISIN",
+    to_symbol_type="RIC",
+    best_match=False
+)
+
+print(ric_mapping)
