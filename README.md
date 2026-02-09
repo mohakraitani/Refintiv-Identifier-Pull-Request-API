@@ -26,7 +26,7 @@ pip install
 
 ## 🔑 API Key Requirement
 
-Before running the script, you must generate an API key from Refinitiv / LSEG.
+Before running the script, you must generate an API key from Refinitiv / LSEG. An active Refinitiv/LSEG subscription with access to the relevant APIs is also required.
 
 Steps to generate an API key:
 
