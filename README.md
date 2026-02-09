@@ -11,9 +11,10 @@
 - [Supported Identifier Types](#-identifier-type)
 - [Prerequisites](#-prerequisites)
 - [License](#-license)
-- [Contact Information](#-contact-information)
+- [Usage Notes](#-usage-notes)
+- [Limitations](#limitations)
 - [Disclaimer](#-disclaimer)
-- [Changelog](#changelog)
+
 
 
 ## 🛠 Installation
@@ -23,7 +24,7 @@ cd Refinitiv-Identifier-Conversion-API
 pip install 
 
 
-##🔑 API Key Requirement
+## 🔑 API Key Requirement
 
 Before running the script, you must generate an API key from Refinitiv / LSEG.
 
@@ -40,7 +41,7 @@ Steps to generate an API key:
 * Copy and securely store the generated API key.
   
 
-##🔄 Supported Identifier Types
+## 🔄 Supported Identifier Types
 
 The script supports conversion between the following identifier formats:
 
@@ -52,7 +53,7 @@ The script supports conversion between the following identifier formats:
 * All values passed to the from_symbol_type parameter must also belong to the same list.
   
 
-##🧩 Prerequisites
+## 🧩 Prerequisites
 
 * Valid Refinitiv/LSEG account with API access
 
@@ -67,13 +68,17 @@ The script supports conversion between the following identifier formats:
 * Required Python libraries installed (if applicable)
 
 
-##▶️ Usage Notes
+## ▶️ Usage Notes
 
 * Ensure that the identifiers provided are valid and correctly formatted.
 
 * The script performs identifier conversion only; it does not validate firm fundamentals or market data.
 
 * Missing or unsupported identifiers may return empty or null results.
+  
+
+## 📝 License
+This project is licensed under the MIT License.
 
 
 ## 🛑 Limitations
