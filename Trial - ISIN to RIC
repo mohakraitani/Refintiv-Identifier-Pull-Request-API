@@ -17,3 +17,7 @@ ric_mapping = ek.get_symbology(
 )
 
 print(ric_mapping)
+
+"""Example Output
+OAPermIDs                   bestMatch        symbol
+DE0005140008  [4295869482]  {'OAPermID': '4295869482'}  DE0005140008"""
