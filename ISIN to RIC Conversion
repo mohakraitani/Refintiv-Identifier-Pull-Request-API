@@ -1,7 +1,9 @@
 
 """Convert ISIN to RIC(Refinitv Instrument Code)
-Step 1 - Clean ISIN file to ensure that you have twelve digit ISINs 
-Step 2 - Set Up API Key (use API Key Generator from Refintiv 
+Step 1 - First set of commands clean ISIN file to ensure that you have twelve digit ISINs 
+Step 2 - Set Up API Key (use API Key Generator from Refintiv)
+Step 3 - Please change your input file and output file as per your system."""
+
 
 ###############  Cleaning ISINs    ##############
 import re
