@@ -38,7 +38,7 @@ import pandas as pd
 import eikon as ek
 
 # SET API KEY
-ek.set_app_key("4ce34b2bf738491b8dbde00b68e9d3e16e5feccf")
+ek.set_app_key("USE your API Key Here")
 
 # READ CUSIPs (already cleaned, 9 characters)
 df = pd.read_excel("cusip.xlsx")
